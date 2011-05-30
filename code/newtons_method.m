@@ -14,6 +14,7 @@ function [ x, c ] = newtons_method ( M, T, P, K, E )
       %  based on its proximity to the patch's control points.
     distances = arrayfun(@(k)sum((R(k,:)-T).^2), 1:size(R,1));
     [distances,order] = sort(distances);
+    distances(distances==0) = eps;
     weight = 1 ./ distances(order(1:2));
     weight = weight / sum(weight);
     points = p(order(1:2),:);
