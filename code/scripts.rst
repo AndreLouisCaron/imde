@@ -145,12 +145,17 @@ Reference
    :param k: number of estimation parameters
    :param e: estimator name (e.g. ``"bfs"``)
 
-.. mat:function:: [ error ] = mean_estimation_error ( q, d, e, n )
+.. mat:function:: [ performance ] = mean_performance ( q, d, e, n )
 
    Computes the mean estimation error for the selected estimator on each of the
-   ``n`` estimation parameters over all input datasets.
+   ``n`` estimation parameters, as well as the mean runtime.  The average is
+   performed over all datasets.
 
    :param q: quality metric name (e.g. ``"ms-ssim"``)
    :param d: distortion process name (e.g. ``"camera"``)
    :param e: estimator name (e.g. ``"bfs"``)
    :param n: number of estimation parameters
+   :returns: ``performance`` -- a vector of ``n+1`` components
+
+   The ``performance`` vector is formatted as the mean error on each of the
+   ``n`` components, followed by the mean runtime for the method.

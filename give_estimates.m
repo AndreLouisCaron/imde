@@ -15,11 +15,13 @@ function [] = give_estimates ( q, d, f, n, k, e )
     M = lookup(N, R, I);
     
     S = lattice(n);
-    estimates = zeros(size(S,1), 2*k);
+    estimates = zeros(size(S,1), 2*k+1);
     for i = 1 : size(S,1),
         T = M(S(i,:));
+        start = tic();
         estimate = E(Q,D,F,M,T);
-        estimates(i,:) = [S(i,:) estimate];
+        runtime = toc(start);
+        estimates(i,:) = [S(i,:) estimate runtime];
     end
     
       % save them for lated.
