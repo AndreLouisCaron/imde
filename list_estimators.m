@@ -25,5 +25,10 @@ function [ listing ] = list_estimators ()
       'nt-qp', @(Q,D,f,M,T) newtons_method(M,T,QP)
       'nt-cp', @(Q,D,f,M,T) newtons_method(M,T,CP)
       
+        % refined patches.
+      'rsi-qp', @(Q,D,f,M,T) refined_patches(...
+          M, QP, @(m,t)simplex(cost_function(m,t),2), 2, T)
+      'rsi-cp', @(Q,D,f,M,T) refined_patches(...
+          M, CP, @(m,t)simplex(cost_function(m,t),2), 2, T)
       };
 end
