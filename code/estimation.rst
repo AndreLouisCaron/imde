@@ -185,7 +185,7 @@ Reference
       ans =
           0.6056   0.5159
 
-.. mat:function:: [ x, c ] = refined_patch_search ( M, P, search, n, T, r, k )
+.. mat:function:: [ x, c ] = refined_patches ( M, P, search, n, T, r, k )
 
    Builds a parametric patch that spans the entire search space and runs the
    selected search procedure to build an initial estimate of the solution.

@@ -1,4 +1,4 @@
-function [ x, c ] = refined_patch_search ( M, P, search, n, T, r, k )
+function [ x, c ] = refined_patches ( M, P, search, n, T, r, k )
     % Copyright(c) Andre Caron <andre.louis.caron@usherbrooke.ca>, 2009-2011
     
       % default to 2 refinements and 75% reduction in each direction.
