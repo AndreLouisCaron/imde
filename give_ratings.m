@@ -7,7 +7,7 @@ function [] = give_ratings ( q, d, f, N, k )
     F = load_dataset(f);
     
       % compute the requested ratings.
-    M = biquadratic_patch(direct(Q, D, F));
+    M = direct(Q, D, F);
     S = lattice(N);
     R = zeros(size(S,1), k);
     for i = 1 : size(S,1),
