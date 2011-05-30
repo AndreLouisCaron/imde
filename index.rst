@@ -22,8 +22,8 @@ Contents
 
    docs/introduction.rst
    docs/getting-started.rst
-   docs/3rd-party.rst
    code/index.rst
+   docs/3rd-party.rst
 
 Publications
 ============
