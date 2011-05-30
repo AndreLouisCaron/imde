@@ -13,6 +13,13 @@ Reference
 
 .. mat:current-toolbox:: imde
 
+.. mat:function:: [ listing ] = list_datasets ()
+
+   This function makes a listing of image files in the ``./data/f/`` folder.
+
+   :returns: a cell array in which each element is suitable for a call to
+             :mat:fn:`load_dataset`.
+
 .. mat:function:: [ f ] = load_dataset ( name )
 
    Loads a dataset by name and returns the clean input image in its original
@@ -24,11 +31,16 @@ Reference
    The datasets are stored in ``./data/f/``.  The ``name`` parameter should
    correspond to a file in that folder.
 
-.. mat:function:: [] = give_ratings ( q, d, f, N )
+.. mat:function:: [] = give_ratings ( q, d, f, N, k )
 
    :param q: quality metric name (e.g. ``"ms-ssim"``)
    :param d: distortion process name (e.g. ``"camera"``)
    :param f: dataset name (e.g. ``"bikes"``)
+   :param k: number of output components for ``q`` (dimensions of quality
+             metric space)
+
+   This function uses :mat:fn:`save_ratings` to persist the results, they are
+   not returned to the caller.
 
    Example:
 
@@ -69,3 +81,24 @@ Reference
 
       >> [N, R] = load_ratings('ms-ssim', 'camera', 'bikes.bmp');
       >> M = lookup(N, R, @bilinear_interpolation);
+
+.. mat:function:: [] = give_all_ratings ( q, d, N, k )
+
+   Computes ratings for each dataset.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param k: number of output components for ``q`` (dimensions of quality
+             metric space)
+
+   This function uses :mat:fn:`save_ratings` to persist the results, they are
+   not returned to the caller.
+
+   Example:
+
+   .. code-block:: matlab
+
+      >>  % pre-compute a high-resolution grid for estimation.
+      >>  % warning: this will take a long time to run...
+      >> give_ratings('ms-ssim', 'camera', 'bikes.png', [50 50]);
+
