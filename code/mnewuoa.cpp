@@ -108,7 +108,7 @@ namespace {
             }
             
                 // Display precious help.
-            ::mexPrintf("%s\n", usage); return;
+	    mex::print(usage); return;
         }
         
             // Sanity check for argument count.
