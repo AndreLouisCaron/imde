@@ -50,6 +50,41 @@ Open MATLAB, then change the working directory to the root of the source code:
 Finally, try running the code in the basic estimation session.  See
 :ref:`basic-session`.
 
+Documentation
+-------------
+
+If you would like a local copy of the documentation to work offline, or if you
+would like to check out an older version, you can build the documentation using
+`Sphinx`_.
+
+.. note::
+
+   This section is advanced usage, and *absolutely not* necessary.  It is only
+   recommended if you plan on software development or research using this
+   framework.
+
+Requirements
+~~~~~~~~~~~~
+
+Install `Python`_.  The 2.x series is recommended (the author uses Python
+2.6.6).  Install `Docutils`_, then install Sphinx using:
+
+.. code-block:: bash
+
+   easy_install -U Sphinx
+
+Compiling
+~~~~~~~~~
+
+From the project root folder, compile the documentation using:
+
+.. code-block:: bash
+
+   sphinx-build -b html . .build
+
+This will build the entire documentation set in a sub-folder named ``.build``.
+Launch the ``.build/index.html`` page in your browser to read the documentaiton.
+
 Using NewUOA
 ------------
 
@@ -60,3 +95,6 @@ MATLAB extension using the MEX compiler (built-in to MATLAB).  See
 .. _`GitHub`: https://github.com/
 .. _`imde project repository`: https://github.com/AndreLouisCaron/imde
 .. _`git`: http://git-scm.com/
+.. _`Sphinx`: http://sphinx.pocoo.org/
+.. _`Python`: http://www.python.org/
+.. _`Docutils`: http://pypi.python.org/pypi/docutils
