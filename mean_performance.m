@@ -16,5 +16,5 @@ function [ performance ] = mean_performance ( q, d, e, n )
           % cumulate results.
         performance = [performance; round];
     end
-    performance = mean(performance(2:end,:), 1);
+    performance = [mean(performance,1)' std(performance,1)'];
 end
