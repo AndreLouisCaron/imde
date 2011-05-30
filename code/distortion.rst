@@ -15,7 +15,7 @@ serves as a case study for the image multi-distortion estimation framework.
 
 .. mat:current-toolbox:: imde
 
-.. mat:function:: [ g ] = digital_camera ( f, x )
+.. mat:function:: [ g ] = camera ( f, x )
 
    Distorts ``f`` using the common model for image acquisition in digital
    cameras:

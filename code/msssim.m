@@ -1,4 +1,4 @@
-function [ x ] = ms_ssim ( f, g )
+function [ x ] = msssim ( f, g )
     % Copyright(c) Christophe Charrier <christophe.charrier@unicaen.fr>, 2010
     
     K = [0.01 0.03];
