@@ -25,5 +25,5 @@ function [] = give_estimates ( q, d, f, n, k, e )
     end
     
       % save them for lated.
-    save_estimates(q, d, f, e, N, estimates);
+    save_estimates(q, d, f, e, n, estimates);
 end
