@@ -21,6 +21,7 @@ Contents
    :maxdepth: 2
 
    docs/introduction.rst
+   docs/3rd-party.rst
    code/index.rst
 
 Publications
