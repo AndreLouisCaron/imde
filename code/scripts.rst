@@ -102,3 +102,55 @@ Reference
       >>  % warning: this will take a long time to run...
       >> give_ratings('ms-ssim', 'camera', 'bikes.png', [50 50]);
 
+.. mat:function:: [] = save_estimates ( q, d, f, e, N, E )
+
+   Saves estimates for a given dataset, estimator pair.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param f: dataset name (e.g. ``"bikes"``)
+   :param e: estimator name (e.g. ``"bfs"``)
+   :param N: estimation grid shape
+   :param E: estimates
+
+.. mat:function:: [ N, E ] = load_estimates ( q, d, f, e )
+
+   Loads estimates for a given dataset, estimator pair.  This is used
+   extensively by the results analysis phase.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param f: dataset name (e.g. ``"bikes"``)
+   :param e: estimator name (e.g. ``"bfs"``)
+   :returns: ``E`` -- the estimates, ``N`` -- esimation grid shape.
+
+.. mat:function:: [] = give_estimates ( q, d, f, n, k, e )
+
+   Runs a given estimation process on a single dataset.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param f: dataset name (e.g. ``"bikes"``)
+   :param n: estimation grid shape
+   :param k: number of estimation parameters
+   :param e: estimator name (e.g. ``"bfs"``)
+
+.. mat:function:: [] = give_all_estimates ( q, d, N, k, e )
+
+   Runs the same estimation process on all datasets.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param N: estimation grid shape
+   :param k: number of estimation parameters
+   :param e: estimator name (e.g. ``"bfs"``)
+
+.. mat:function:: [ error ] = mean_estimation_error ( q, d, e, n )
+
+   Computes the mean estimation error for the selected estimator on each of the
+   ``n`` estimation parameters over all input datasets.
+
+   :param q: quality metric name (e.g. ``"ms-ssim"``)
+   :param d: distortion process name (e.g. ``"camera"``)
+   :param e: estimator name (e.g. ``"bfs"``)
+   :param n: number of estimation parameters
