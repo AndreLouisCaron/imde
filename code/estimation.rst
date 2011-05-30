@@ -13,6 +13,8 @@ framework.
 Examples
 --------
 
+.. _basic-session:
+
 Basic session
 ~~~~~~~~~~~~~
 

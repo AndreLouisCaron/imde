@@ -9,6 +9,8 @@ This project includes a small amount of software written by other parties.  This
 source code is release, to the best of the authors' knowledge, in compliance
 with the respective projects' software licenses.
 
+.. _newuoa:
+
 NewUOA
 ------
 
